@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	fmt.Println(os.Args)
 	msg := strings.Join(os.Args[1:], " ")
 	var conn *sns.SNS = sns.New(aws.Auth{AccessKeyId, AccessSecret}, aws.USEast)
 
