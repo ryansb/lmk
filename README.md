@@ -9,6 +9,12 @@ keys and the topic ARN you want to publish to.
 Once you've build LMK with your keys, you can copy it to any machine with no
 configuration and use it. Great to have on all your machines, and so easy!
 
+What's that you say, "I have i386 machines and my desktop is x64", well here's
+how to build lmk for another architecture. `GOARCH=386 go build -a` and the
+`lmk` that gets built will be for 32-bit machines too. I keep a `lmk.x64` and
+`lmk.386` handy so I don't have to rebuild every time I want it on a different
+architecture.
+
 Usage
 -----
 If you have a long-running task (say, a big file copy) and you don't want to
