@@ -1,0 +1,7 @@
+package main
+
+const (
+	AccessKeyId  string = "SomeId"
+	AccessSecret        = "SomeSecret"
+	SnsTopicArn         = "SomeArn"
+)
