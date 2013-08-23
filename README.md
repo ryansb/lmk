@@ -9,11 +9,20 @@ keys and the topic ARN you want to publish to.
 Once you've build LMK with your keys, you can copy it to any machine with no
 configuration and use it. Great to have on all your machines, and so easy!
 
-What's that you say, "I have i386 machines and my desktop is x64", well here's
-how to build lmk for another architecture. `GOARCH=386 go build -a` and the
-`lmk` that gets built will be for 32-bit machines too. I keep a `lmk.x64` and
-`lmk.386` handy so I don't have to rebuild every time I want it on a different
-architecture.
+To build on your system:
+
+```
+$ vim conf.go conf.go.example # see Usage
+$ go get launchpad.net/goamz/aws launchpad.net/goamz/exp/sns
+$ go build
+# if you need a build for a different architecture
+$ cp lmk lmk.x64
+$ GOARCH=386 go build -a
+$ cp lmk lmk.i386
+```
+
+I keep a `lmk.x64` and `lmk.i386` handy so I don't have to rebuild every time I
+want it on a different architecture.
 
 Usage
 -----
