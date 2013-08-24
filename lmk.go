@@ -11,6 +11,7 @@ import (
 
 var onlyFailure int
 var specificSubject string
+var printVersion bool
 
 const nonFail int = -999
 
@@ -29,10 +30,16 @@ func init() {
 		" to this command.")
 	flag.StringVar(&specificSubject, "subject", "", "Specify the subject "+
 		"(defaults to beginning of message)")
+	flag.BoolVar(&printVersion, "v", false, "Print version number")
 }
 
 func main() {
 	flag.Parse()
+
+	if printVersion {
+		fmt.Println("lmk version 0.1")
+		return
+	}
 
 	var msg string = strings.Join(flag.Args(), " ")
 
