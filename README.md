@@ -37,6 +37,16 @@ know if it failed.
 Whatever args you pass will be truncated to 20 characters for the message
 subject, and the body will contain the rest.
 
+If you only want a notification if the command fails, pass `$?` to the
+`--only-failure` option.
+
+`long-running-task-that-might-fail; lmk --only-failure $? long-running-task
+failed. Bad news dude.`
+
+You can also specify the subject.
+
+`task; lmk --subject "RE: Your Task" the task completed`
+
 Permissions
 -----------
 Since it's possible to extract the keys directly from the binary, I recommend
